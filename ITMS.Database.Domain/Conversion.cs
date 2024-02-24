@@ -40,6 +40,10 @@ namespace ITMS.Database.Domain
         {
             return JsonConvert.SerializeObject(dt);
         }
+        // public static string ConvertDataTabletoJson(DataTable dt)
+        //{
+        //    return JsonConvert.SerializeObject(dt);
+       // }
         public static T JsonToObject<T>(string  jsonValue)
         {
             //string json = "{\"plans\": [{.... ";
