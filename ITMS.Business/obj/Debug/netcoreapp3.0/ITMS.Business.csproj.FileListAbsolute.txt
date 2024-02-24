@@ -1,0 +1,9 @@
+E:\WorkFolder\ITMS_Nashik\Code\NMC_PORTAL_API\ITMS.Business\bin\Debug\netcoreapp3.0\ITMS.Business.deps.json
+E:\WorkFolder\ITMS_Nashik\Code\NMC_PORTAL_API\ITMS.Business\bin\Debug\netcoreapp3.0\ITMS.Business.dll
+E:\WorkFolder\ITMS_Nashik\Code\NMC_PORTAL_API\ITMS.Business\bin\Debug\netcoreapp3.0\ITMS.Business.pdb
+E:\WorkFolder\ITMS_Nashik\Code\NMC_PORTAL_API\ITMS.Business\obj\Debug\netcoreapp3.0\ITMS.Business.csprojAssemblyReference.cache
+E:\WorkFolder\ITMS_Nashik\Code\NMC_PORTAL_API\ITMS.Business\obj\Debug\netcoreapp3.0\ITMS.Business.AssemblyInfoInputs.cache
+E:\WorkFolder\ITMS_Nashik\Code\NMC_PORTAL_API\ITMS.Business\obj\Debug\netcoreapp3.0\ITMS.Business.AssemblyInfo.cs
+E:\WorkFolder\ITMS_Nashik\Code\NMC_PORTAL_API\ITMS.Business\obj\Debug\netcoreapp3.0\ITMS.Business.csproj.CoreCompileInputs.cache
+E:\WorkFolder\ITMS_Nashik\Code\NMC_PORTAL_API\ITMS.Business\obj\Debug\netcoreapp3.0\ITMS.Business.dll
+E:\WorkFolder\ITMS_Nashik\Code\NMC_PORTAL_API\ITMS.Business\obj\Debug\netcoreapp3.0\ITMS.Business.pdb

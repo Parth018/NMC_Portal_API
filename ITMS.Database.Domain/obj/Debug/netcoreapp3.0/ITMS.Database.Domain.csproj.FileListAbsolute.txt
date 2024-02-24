@@ -1,0 +1,12 @@
+E:\WorkFolder\ITMS_Nashik\Code\NMC_PORTAL_API\ITMS.Database.Domain\bin\Debug\netcoreapp3.0\ITMS.Database.Domain.deps.json
+E:\WorkFolder\ITMS_Nashik\Code\NMC_PORTAL_API\ITMS.Database.Domain\bin\Debug\netcoreapp3.0\ITMS.Database.Domain.dll
+E:\WorkFolder\ITMS_Nashik\Code\NMC_PORTAL_API\ITMS.Database.Domain\bin\Debug\netcoreapp3.0\ITMS.Database.Domain.pdb
+E:\WorkFolder\ITMS_Nashik\Code\NMC_PORTAL_API\ITMS.Database.Domain\bin\Debug\netcoreapp3.0\ITMS.Business.dll
+E:\WorkFolder\ITMS_Nashik\Code\NMC_PORTAL_API\ITMS.Database.Domain\bin\Debug\netcoreapp3.0\ITMS.Business.pdb
+E:\WorkFolder\ITMS_Nashik\Code\NMC_PORTAL_API\ITMS.Database.Domain\obj\Debug\netcoreapp3.0\ITMS.Database.Domain.csprojAssemblyReference.cache
+E:\WorkFolder\ITMS_Nashik\Code\NMC_PORTAL_API\ITMS.Database.Domain\obj\Debug\netcoreapp3.0\ITMS.Database.Domain.AssemblyInfoInputs.cache
+E:\WorkFolder\ITMS_Nashik\Code\NMC_PORTAL_API\ITMS.Database.Domain\obj\Debug\netcoreapp3.0\ITMS.Database.Domain.AssemblyInfo.cs
+E:\WorkFolder\ITMS_Nashik\Code\NMC_PORTAL_API\ITMS.Database.Domain\obj\Debug\netcoreapp3.0\ITMS.Database.Domain.csproj.CoreCompileInputs.cache
+E:\WorkFolder\ITMS_Nashik\Code\NMC_PORTAL_API\ITMS.Database.Domain\obj\Debug\netcoreapp3.0\ITMS.Database.Domain.csproj.CopyComplete
+E:\WorkFolder\ITMS_Nashik\Code\NMC_PORTAL_API\ITMS.Database.Domain\obj\Debug\netcoreapp3.0\ITMS.Database.Domain.dll
+E:\WorkFolder\ITMS_Nashik\Code\NMC_PORTAL_API\ITMS.Database.Domain\obj\Debug\netcoreapp3.0\ITMS.Database.Domain.pdb
