@@ -7,8 +7,9 @@ namespace ITMS.Business.Models.General
         /// <summary>
         /// Gets or sets the message.
         /// </summary>
-        public string Message { get; set; }
-        //vivek
+     
+          public string Message { get; set; }
+        //parth
         /// <summary>
         /// Gets or sets the description.
         /// </summary>
