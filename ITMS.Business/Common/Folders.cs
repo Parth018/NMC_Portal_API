@@ -6,6 +6,9 @@ namespace ITMS.Business.Common
 {
    public class Folders
     {
-        public string HelpDeskDocs { get; set; }
+          //public string GetHelpDeskDocs { get; set; }
+      
+      
+         public string HelpDeskDocs { get; set; }
     }
 }
