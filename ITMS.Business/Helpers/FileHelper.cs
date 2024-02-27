@@ -10,7 +10,8 @@ namespace ITMS.Business.Helpers
         /// </summary>
         /// <param name="fileName">Name of the file.</param>
         /// <param name="text">The text.</param>
-        public static void WriteLine(string fileName, string text)
+   
+         public static void WriteLine(string fileName, string text)
         {
             // create a writer and open the file
             TextWriter tw = new StreamWriter(fileName, true);
