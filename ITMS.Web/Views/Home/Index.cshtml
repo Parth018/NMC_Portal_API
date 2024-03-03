@@ -1,0 +1,212 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using System.Data;
+
+@*<div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>*@
+
+<style type="text/css">
+
+    #ResultDialog {
+        overflow: auto;
+        height: 500px;
+    }
+
+    .listbox {
+        width: 100%!important;
+        margin-right: 15px;
+        height: 80px!important;
+    }
+</style>
+
+
+@*<div class="row">
+        <div class="col-4">col-4</div>
+        <div class="col-4">col-4</div>
+        <div class="col-4">col-4</div>
+    </div>*@
+
+<div class="card">
+    <div class="card-body">
+        <form class="form-inline">
+            <div class="form-group">
+                <label style="width:150px">Machine Name</label>
+                <input type="text" class="form-control" id="txtMachineName" style="margin-right: 10px">
+                <button type="button" id="btnFetchDB" class="btn btn-primary">Fetch Database</button>
+            </div>
+            <div class="form-group">
+                <label style="width:100px">DataBase</label>
+                <select id="ddlDataBase" class="form-control" style="width: 150px;margin-right: 10px"></select>
+                <button type="button" id="btnConnect" class="btn btn-primary">Connect</button>
+            </div>
+            <div class="form-group">
+                <label style="width:90px">Tables</label>
+                <select id="ddlTable" class="form-control" style="width: 400px;margin-right: 10px"></select>
+                <button type="button" id="btnFetchDetails" class="btn btn-primary">Fetch Details</button>
+            </div>
+        </form>        
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <form class="form-inline" style="margin-bottom:10px">
+            <div class="col-md-3">
+                <label>Select Coulmns</label>
+                <select id="ddlColumn" multiple="multiple" class="form-control listbox"></select>
+            </div>
+            <div class="col-md-3">
+                <label>Group By Coulmns</label>
+                <select id="ddlGroupBy" multiple="multiple" class="form-control listbox"></select>
+            </div>
+            <div class="col-md-3">
+                <label>Order By Coulmns</label>
+                <select id="ddlOrderBy" multiple="multiple" class="form-control listbox"></select>
+            </div>
+            <div class="col-md-3">
+                <button type="button" id="btnGenerate" class="btn btn-primary">Generate Query</button>
+            </div>
+        </form>
+        <form class="form-inline">
+            <div class="form-group">
+                <textarea id="txtQuery" rows="2" cols="100" class="form-control" style="margin-right: 10px"></textarea>
+                <button type="button" id="btnRunQuery" class="btn btn-primary" style="margin-right: 10px">Run Query</button>
+                <button type="button" id="btnClear" class="btn btn-primary">Clear</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <div id="ResultDialog"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $(function () {
+
+        $("#btnFetchDB").click(function () {
+
+            $.ajax({
+                type: "GET",
+                url: '@Url.Action("GetDatabaseList", "Home")',
+                data: { machineName: $("#txtMachineName").val() },
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    $('#ddlDataBase').empty();
+                    $.each(data.dataBaseList, function (i) {
+                        var optionhtml = '<option value="' + data.dataBaseList[i] + '">' + data.dataBaseList[i] + '</option>';
+                        $("#ddlDataBase").append(optionhtml);
+                    });
+                },
+                error: function (data) {
+                    alert(data.responseJSON.message);
+                }
+            });
+
+        });
+
+        $("#btnConnect").click(function () {
+
+            $.ajax({
+                type: "GET",
+                url: '@Url.Action("GetTableList", "Home")',
+                data: { machineName: $("#txtMachineName").val(), databaseName: $("#ddlDataBase").val() },
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    $('#ddlTable').empty();
+                    $.each(data.tableList, function (i) {
+                        var optionhtml = '<option value="' + data.tableList[i] + '">' + data.tableList[i] + '</option>';
+                        $("#ddlTable").append(optionhtml);
+                    });
+                },
+                error: function (data) {
+                    alert(data.responseJSON.message);
+                }
+            });
+
+        });
+
+        $("#btnFetchDetails").click(function () {
+
+            $.ajax({
+                type: "GET",
+                url: '@Url.Action("GetColumnList", "Home")',
+                data: { machineName: $("#txtMachineName").val(), databaseName: $("#ddlDataBase").val(), tableName: $("#ddlTable").val() },
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    $('#ddlColumn').empty();
+                    $('#ddlGroupBy').empty();
+                    $('#ddlOrderBy').empty();
+                    $.each(data.columnList, function (i) {
+                        var optionhtml = '<option value="' + data.columnList[i] + '">' + data.columnList[i] + '</option>';
+                        $("#ddlColumn").append(optionhtml);
+                        $("#ddlGroupBy").append(optionhtml);
+                        $("#ddlOrderBy").append(optionhtml);
+                    });
+                },
+                error: function (data) {
+                    alert(data.responseJSON.message);
+                }
+            });
+
+        });
+
+        $("#btnGenerate").click(function () {
+
+            var columns = $("#ddlColumn").val().toString();
+            var groupBy = $("#ddlGroupBy").val().toString();
+            var orderBy = $("#ddlOrderBy").val().toString();
+
+            $.ajax({
+                type: "GET",
+                url: '@Url.Action("GenerateQuery", "Home")',
+                data: { tableName: $("#ddlTable").val(), columns: columns, groupBy: groupBy, orderBy: orderBy },
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    $("#txtQuery").val(data.query);
+                },
+                error: function (data) {
+                    alert(data.responseJSON.message);
+                }
+            });
+
+        });
+
+        $("#btnRunQuery").click(function () {
+
+            $.ajax({
+                type: "GET",
+                url: '@Url.Action("Result", "Home")',
+                data: { machineName: $("#txtMachineName").val(), databaseName: $("#ddlDataBase").val(), query: $("#txtQuery").val() },
+                contentType: "application/json; charset=utf-8",
+                dataType: "html",
+                success: function (data) {
+                    $('#ResultDialog').html(data);
+                },
+                error: function (data) {
+
+                }
+            });
+
+        });
+
+        $("#btnClear").click(function () {
+
+            $("#txtQuery").val('');
+            $('#ResultDialog').html('');
+        });
+
+    });
+
+</script>
