@@ -44,7 +44,7 @@ namespace ITMS.Web
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            //for user authentication
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
