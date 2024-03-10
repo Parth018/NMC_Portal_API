@@ -30,6 +30,13 @@ namespace ITMS.Web.Controllers
             return View();
         }
 
+        //use for user authentication
+      //public IActionResult Privacy()
+        //{
+          //  return View();
+        //}
+
+
         [HttpGet]
         public IActionResult GetDatabaseList(string machineName)
         {
