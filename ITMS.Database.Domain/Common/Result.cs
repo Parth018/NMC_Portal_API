@@ -11,6 +11,7 @@ namespace ITMS.Database.Domain.Common
         public bool issuccess { get; set; } = false;
 
         public Exception exception { get; set; }
+        //public Exception exception { get; set; }
 
         public int rowcount { get; set; }
     }
