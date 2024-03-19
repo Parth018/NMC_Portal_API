@@ -9,7 +9,6 @@ namespace ITMS.Database.Domain.Common
         public string message { get; set; }
 
         public bool issuccess { get; set; } = false;
-
         public Exception exception { get; set; }
         public int rowcount { get; set; }
     }
