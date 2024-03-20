@@ -24,6 +24,7 @@ namespace ITMS.Database.Domain
                     {
                         if (!object.Equals(dr[prop.Name], DBNull.Value))
                         {
+                           // prop.SetValue(obj, dr[prop.Name], null);
                             prop.SetValue(obj, dr[prop.Name], null);
                         }
                     }
