@@ -10,6 +10,7 @@ namespace ITMS.Business.Enums.General
         /// <summary>
         /// An error message.
         /// </summary>
+       
         Error = 1,
 
         /// <summary>
